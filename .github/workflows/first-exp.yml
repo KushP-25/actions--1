@@ -16,4 +16,4 @@ jobs:
                cat README.md  
 
             - name: Generate ASCII Artwork
-             run: cowsay -f dragon "Run for cover, t am a Dragon....RAWR"  >> dragon.txt
+              run: cowsay -f dragon "Run for cover, t am a Dragon....RAWR"  >> dragon.txt
