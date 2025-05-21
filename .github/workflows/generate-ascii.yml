@@ -14,7 +14,7 @@ jobs:
       run: cowsay -f dragon "Run for the Cover...." >> dragon.txt
 
     - name: Upload drgon
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4.6.2
       with:
         name: dragon-file
         path: dragon.txt
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download dragon
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.3.0
       with:
         name: dragon-file
 
@@ -36,10 +36,10 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Download dragon
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.3.0
         with:
           name: dragon-file
-          
+
       - name:  read
         run: cat dragon.txt
 
