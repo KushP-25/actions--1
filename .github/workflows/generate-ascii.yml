@@ -5,7 +5,7 @@ on:
 
 jobs: 
    build_job_1:
-    runs-on: ubuntu latest
+    runs-on: ubuntu-latest
     steps:
     - name: Install Cowsay program
       run: sudo apt-get install cowsay -y
@@ -15,7 +15,7 @@ jobs:
      
    test_job_2:
     needs: build_job_1
-    runs-on: ubuntu latest
+    runs-on: ubuntu -atest
     steps:
      - name: Sleep 10
        run: sleep 10
@@ -25,7 +25,7 @@ jobs:
 
    deploy_3:
     needs: test_job_2
-    runs-on: ubuntu latest
+    runs-on: ubuntu-latest
     steps: 
       - name:  read
         run: cat dragon.txt
