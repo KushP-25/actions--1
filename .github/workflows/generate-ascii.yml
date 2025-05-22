@@ -11,13 +11,13 @@ jobs:
         run: sudo apt-get install cowsay -y
 
       - name: Execute Cowsay CMD
-        run: cowsay -f dragon "Run for the Cover.... I am a dragon" >> dragon.txt
+        run: cowsay -f frog "Run for the Cover.... I am a frog" >> frog.txt
 
       - name: Upload dragon
         uses: actions/upload-artifact@v4.6.2
         with:
           name: dragon-file
-          path: dragon.txt
+          path: frog.txt
      
   test_job_2:
     needs: build_job_1
@@ -29,7 +29,7 @@ jobs:
           name: dragon-file
 
       - name: Test File
-        run: grep -i "dragon" dragon.txt
+        run: grep -i "frog" frog.txt
 
   deploy_3:
     needs: test_job_2
@@ -41,7 +41,7 @@ jobs:
           name: dragon-file
 
       - name: Read
-        run: cat dragon.txt
+        run: cat frog.txt
 
       - name: Deploy
         run: echo "Deploying...."
